@@ -44,14 +44,17 @@ function enable() {
   BluetoothMenuBox.replace_child(originalWidget, panelButtonText);
   panelButtonText.connect("activate", function (w) {
     const adapter = _getDefaultAdapter();
-    
+  
     if (adapter === null) {
         spawn("bluetoothctl power off");
     } else {
         spawn("bluetoothctl power on")
     }
-    
-    w.label.set_text(BluetoothMenu.focusActor.label.get_text() === "Bluetooth On" ? "Turn on" : "Turn off")
+
+    // BluetoothMenu.focusActor.label.get_text() returns the previous state before the toggle.
+    // Since BT is off, get_text() would show Bluetooth Off, but (adapter !==  null) so Bt would power on.
+    // Hence the label name should turn to Turn off. 
+    w.label.set_text(BluetoothMenu.focusActor.label.get_text() === "Bluetooth Off" ? "Turn off" : "Turn on")
     
   });
 }
