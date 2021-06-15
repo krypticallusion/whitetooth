@@ -1,0 +1,10 @@
+{
+  "name": "whitetooth",
+  "version": "1.0.0",
+  "main": "extension.js",
+  "author": "Kevin D'souza (krypticallusion)",
+  "license": "MIT",
+  "scripts": {
+    "sync": "./sync.sh"
+  }
+}

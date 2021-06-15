@@ -1,0 +1,10 @@
+{
+    "name" : "Whitetooth",
+    "description" : "Bluetooth applet that uses the bluetoothctl to pair/unpair Bluetooth devices.",
+    "shell-version" : [
+        "40.2"
+    ],
+    "url" : "",
+    "uuid" : "whitetooth@kryptk.ml",
+    "version" : 1.0
+}
